@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit&family=Open+Sans:wght@600&family=Rubik:wght@300;400&family=Tilt+Neon&family=Young+Serif&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .navbar {
+            height: 50px;
+            width: 100%;
+            background-color: blueviolet;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding-left: 20px;
+            padding-right: 20px;
+            align-items: center;
+        }
+
+        .menu a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            transition: 0.3s;
+            font-family: 'Rubik';
+            border-radius: 10%;
+        }
+        .menuresponsive{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            top: 50px;
+            left: 0px;
+            padding: 10px;
+            position: absolute;
+            background-color: blueviolet;
+        }
+        .menuresponsive a{
+            text-decoration: none;
+            padding: 5px 0px;
+            color: #fff;
+            
+        }
+        .icon {
+            color: white;
+            text-decoration: none;
+            display: none;
+            font-size: 20px;
+        }
+
+        @media screen and (max-width: 700px) {
+            .menu {
+                display: none;
+            }
+
+            .icon {
+                display: block;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1> LOGO</h1>
+            </div>
+            <div class="menu" id="menu">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Skills</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <a class="icon" href="javascript:void(0);" onclick="toggleMenu()">&#9776;</a>
+        </nav>
+    </header>
+    <script>
+        function toggleMenu() {
+            let x = document.getElementById("menu")
+            let icon = document.getElementsByClassName("icon")
+            if (x.className === "menu") {
+                x.className += "responsive"
+            }
+            else {
+                x.className = "menu"
+            }
+
+        }
+    </script>
+</body>
+
+</html>
